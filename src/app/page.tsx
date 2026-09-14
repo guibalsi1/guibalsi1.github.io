@@ -131,7 +131,7 @@ export default function Home() {
             <Heading as="h2" variant="display-strong-xs">Trabalhos selecionados</Heading>
             <Text variant="body-default-m" onBackground="neutral-weak">Cases que unem raciocínio de produto e execução técnica.</Text>
           </Column>
-          <Button href="/work" variant="tertiary" size="s" arrowIcon>Ver todos os projetos</Button>
+          <Button href="/work/" variant="tertiary" size="s" arrowIcon>Ver todos os projetos</Button>
         </Row>
         <Projects range={[1, 2]} />
       </Column>
