@@ -1,0 +1,75 @@
+---
+title: "Verizon Hotels"
+publishedAt: "2025-09-10"
+summary: "Um sistema simples de gerenciamento de hotéis desenvolvido em Java e Swing."
+discipline: "development"
+tools: ["Java", "Swing", "SQLite"]
+images:
+  - "/images/projects/project-verizon/image-verizon.png"
+team:
+  - name: "Guilherme Damico Balsi"
+    role: "Desenvolvedor"
+    avatar: "/images/profile.png"
+    linkedIn: "https://www.linkedin.com/in/guilhermedamicobalsi/"
+---
+<Row>
+    <Button href="https://www.github.com/guibalsi1/verizon-hotels" prefixIcon="github" label="Veja no GitHub"/>
+</Row>
+
+## Funcionalidades
+
+*   **Gerenciamento de Hóspedes:** Adicionar, visualizar e gerenciar informações de hóspedes.
+*   **Gerenciamento de Funcionários:** Adicionar, visualizar e gerenciar informações de funcionários.
+*   **Gerenciamento de Quartos:** Gerenciar inventário e detalhes dos quartos.
+*   **Reservas:** Criar e gerenciar reservas de hotel.
+*   **Relatórios:** Gerar relatórios em formato PDF.
+*   **Faturamento:** Gerar faturas para os hóspedes.
+
+## Tecnologias Utilizadas
+
+*   **Java 21**
+*   **Maven:** Para gerenciamento de projeto e automação de build.
+*   **Java Swing:** Para a interface gráfica do usuário.
+*   **FlatLaf:** Para um visual moderno na aplicação Swing.
+*   **SQLite:** Como banco de dados para armazenar as informações da aplicação.
+*   **sqlite-jdbc:** Para a conectividade JDBC com o banco SQLite.
+*   **jfreechart:** Para geração de gráficos e diagramas.
+*   **itextpdf:** Para criação de documentos PDF (relatórios e faturas).
+*   **jcalendar:** Para o componente de seleção de datas na interface.
+
+## Pré-requisitos
+
+*   Java Development Kit (JDK) 21 ou superior.
+*   Apache Maven.
+
+## Como Executar
+
+-  **Gerar o build do projeto usando Maven:**
+    <CodeBlock compact marginBottom="16" codes={
+        [
+            {
+                code: "mvn package",
+                language: "bash"
+            }
+        ]
+    }/>
+
+Isso criará um arquivo JAR com todas as dependências necessárias no diretório `target`.
+
+- **Executar a aplicação:**
+
+    <CodeBlock compact marginBottom="16" codes={
+        [
+            {
+                code: "java -jar target/verizon-hotels-1.1-jar-with-dependencies.jar",
+                language: "bash"
+            }
+        ]
+    }/>
+
+
+## Banco de Dados
+
+A aplicação utiliza um banco de dados SQLite para armazenar suas informações.
+O arquivo do banco de dados, `banco_hotel.db`, está localizado no diretório `data`.
+Quando você executar a aplicação pela primeira vez, esse arquivo será usado para armazenar todas as informações de hóspedes, funcionários, quartos e reservas.
