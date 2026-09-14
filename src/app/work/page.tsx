@@ -1,7 +1,6 @@
-import { Column, Heading, Meta, Row, Schema, Text, ToggleButton } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema, Text } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
-import type { ProjectDiscipline } from "@/utils/utils";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -13,18 +12,7 @@ export async function generateMetadata() {
   });
 }
 
-type WorkPageProps = {
-  searchParams: Promise<{ discipline?: string }>;
-};
-
-const disciplines: ProjectDiscipline[] = ["development", "design", "end-to-end"];
-
-export default async function Work({ searchParams }: WorkPageProps) {
-  const { discipline: requestedDiscipline } = await searchParams;
-  const discipline = disciplines.includes(requestedDiscipline as ProjectDiscipline)
-    ? (requestedDiscipline as ProjectDiscipline)
-    : undefined;
-
+export default async function Work() {
   return (
     <Column maxWidth="m" paddingTop="24" gap="l">
       <Schema
@@ -46,13 +34,7 @@ export default async function Work({ searchParams }: WorkPageProps) {
           Cases de produto que conectam experiência, interface e implementação.
         </Text>
       </Column>
-      <Row horizontal="center" wrap gap="4">
-        <ToggleButton href="/work" label="Todos" selected={!discipline} variant="outline" />
-        <ToggleButton href="/work?discipline=development" label="Desenvolvimento" selected={discipline === "development"} variant="outline" />
-        <ToggleButton href="/work?discipline=design" label="UX/UI Design" selected={discipline === "design"} variant="outline" />
-        <ToggleButton href="/work?discipline=end-to-end" label="End-to-end" selected={discipline === "end-to-end"} variant="outline" />
-      </Row>
-      <Projects discipline={discipline} />
+      <Projects />
     </Column>
   );
 }

@@ -14,7 +14,7 @@ import type {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://guibalsi.dev";
+const baseURL: string = "https://guibalsi.me";
 
 const routes: RoutesConfig = {
   "/": true,
@@ -33,8 +33,6 @@ const display: DisplayConfig = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env
 const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
-    "/blog/work": true,
 };
 
 // Import and set font for each variant
